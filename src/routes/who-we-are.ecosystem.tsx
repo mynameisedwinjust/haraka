@@ -14,9 +14,9 @@ export const Route = createFileRoute("/who-we-are/ecosystem")({
       { property: "og:title", content: "Our Ecosystem — HARAKA" },
       { property: "og:description", content: "Technology, cloud, AI and industry capability relationships." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/who-we-are/ecosystem" },
+      { property: "og:url", content: "https://haraka-vision.com/who-we-are/ecosystem" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/who-we-are/ecosystem" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/who-we-are/ecosystem" }],
   }),
   component: EcosystemPage,
 });

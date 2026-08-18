@@ -24,9 +24,9 @@ export const Route = createFileRoute("/solutions/")({
         content: "Solutions grouped around what organizations are trying to achieve.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/solutions" },
+      { property: "og:url", content: "https://haraka-vision.com/solutions" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/solutions" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/solutions" }],
   }),
   component: SolutionsPage,
 });

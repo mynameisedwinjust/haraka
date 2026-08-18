@@ -21,9 +21,9 @@ export const Route = createFileRoute("/what-we-do/")({
           "Four practice areas helping organizations transform, operate better and grow.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/what-we-do" },
+      { property: "og:url", content: "https://haraka-vision.com/what-we-do" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/what-we-do" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/what-we-do" }],
   }),
   component: WhatWeDoPage,
 });

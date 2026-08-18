@@ -10,9 +10,9 @@ export const Route = createFileRoute("/terms")({
       { property: "og:title", content: "Terms of Use — HARAKA" },
       { property: "og:description", content: "Terms governing use of the HARAKA website." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/terms" },
+      { property: "og:url", content: "https://haraka-vision.com/terms" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/terms" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/terms" }],
   }),
   component: TermsPage,
 });

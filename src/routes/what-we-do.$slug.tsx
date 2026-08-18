@@ -17,7 +17,7 @@ export const Route = createFileRoute("/what-we-do/$slug")({
       return { meta: [{ title: "Unavailable — HARAKA" }, { name: "robots", content: "noindex" }] };
     }
     const { area } = loaderData;
-    const url = `https://haraka-vision.lovable.app/what-we-do/${params.slug}`;
+    const url = `https://haraka-vision.com/what-we-do/${params.slug}`;
     return {
       meta: [
         { title: `${area.title} — HARAKA` },

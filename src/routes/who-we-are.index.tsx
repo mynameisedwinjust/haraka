@@ -22,9 +22,9 @@ export const Route = createFileRoute("/who-we-are/")({
           "Business expertise, technology and industry knowledge combined into practical solutions that create measurable value.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/who-we-are" },
+      { property: "og:url", content: "https://haraka-vision.com/who-we-are" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/who-we-are" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/who-we-are" }],
   }),
   component: WhoWeArePage,
 });

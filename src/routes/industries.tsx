@@ -13,9 +13,9 @@ export const Route = createFileRoute("/industries")({
       { property: "og:title", content: "Industries — HARAKA" },
       { property: "og:description", content: "Industry knowledge applied to real business operations." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/industries" },
+      { property: "og:url", content: "https://haraka-vision.com/industries" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/industries" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/industries" }],
   }),
   component: IndustriesPage,
 });

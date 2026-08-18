@@ -19,9 +19,9 @@ export const Route = createFileRoute("/who-we-are/approach")({
         content: "How HARAKA moves from understanding the business to measurable growth.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/who-we-are/approach" },
+      { property: "og:url", content: "https://haraka-vision.com/who-we-are/approach" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/who-we-are/approach" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/who-we-are/approach" }],
   }),
   component: ApproachPage,
 });

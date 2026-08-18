@@ -18,9 +18,9 @@ export const Route = createFileRoute("/insights")({
       { property: "og:title", content: "HARAKA Insights" },
       { property: "og:description", content: insightsMeta.description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/insights" },
+      { property: "og:url", content: "https://haraka-vision.com/insights" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/insights" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/insights" }],
   }),
   component: InsightsPage,
 });

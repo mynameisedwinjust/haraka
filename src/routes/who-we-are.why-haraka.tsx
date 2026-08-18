@@ -12,9 +12,9 @@ export const Route = createFileRoute("/who-we-are/why-haraka")({
       { property: "og:title", content: "Why HARAKA" },
       { property: "og:description", content: "Four reasons organizations choose HARAKA for transformation." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/who-we-are/why-haraka" },
+      { property: "og:url", content: "https://haraka-vision.com/who-we-are/why-haraka" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/who-we-are/why-haraka" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/who-we-are/why-haraka" }],
   }),
   component: WhyHarakaPage,
 });

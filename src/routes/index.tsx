@@ -36,10 +36,10 @@ export const Route = createFileRoute("/")({
           "Transforming Business. Enabling Growth. Strategy, technology, digital transformation and business growth.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/" },
+      { property: "og:url", content: "https://haraka-vision.com/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/" }],
     scripts: [
       {
         type: "application/ld+json",

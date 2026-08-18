@@ -14,9 +14,9 @@ export const Route = createFileRoute("/careers")({
       { property: "og:title", content: "Careers at HARAKA" },
       { property: "og:description", content: careers.copy },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/careers" },
+      { property: "og:url", content: "https://haraka-vision.com/careers" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/careers" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/careers" }],
   }),
   component: CareersPage,
 });

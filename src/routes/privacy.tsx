@@ -10,9 +10,9 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:title", content: "Privacy Policy — HARAKA" },
       { property: "og:description", content: "How HARAKA handles personal information." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/privacy" },
+      { property: "og:url", content: "https://haraka-vision.com/privacy" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/privacy" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/privacy" }],
   }),
   component: PrivacyPage,
 });

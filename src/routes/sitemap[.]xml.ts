@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 
 import { practiceAreas, solutionGroups } from "@/content/site";
 
-const BASE_URL = "https://haraka-vision.lovable.app";
+const BASE_URL = "https://haraka-vision.com";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

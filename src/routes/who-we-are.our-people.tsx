@@ -12,9 +12,9 @@ export const Route = createFileRoute("/who-we-are/our-people")({
       { property: "og:title", content: "Our People — HARAKA" },
       { property: "og:description", content: "Meet the HARAKA leadership team." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://haraka-vision.lovable.app/who-we-are/our-people" },
+      { property: "og:url", content: "https://haraka-vision.com/who-we-are/our-people" },
     ],
-    links: [{ rel: "canonical", href: "https://haraka-vision.lovable.app/who-we-are/our-people" }],
+    links: [{ rel: "canonical", href: "https://haraka-vision.com/who-we-are/our-people" }],
   }),
   component: OurPeoplePage,
 });
