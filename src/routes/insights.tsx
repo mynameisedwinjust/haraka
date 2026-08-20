@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Reveal } from "@/components/site/reveal";
 import { fadeUpVariant, staggerContainer } from "@/components/site/animations";
-import { insightTags, insights, insightsMeta } from "@/content/site";
+import { insights, insightsMeta } from "@/content/site";
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -27,15 +27,10 @@ export const Route = createFileRoute("/insights")({
 
 function InsightsPage() {
   const [category, setCategory] = useState<string>("All");
-  const [activeTags, setActiveTags] = useState<string[]>([]);
   const [query, setQuery] = useState("");
-
-  const toggleTag = (tag: string) =>
-    setActiveTags((prev) => (prev.includes(tag) ? prev.filter((item) => item !== tag) : [...prev, tag]));
 
   const reset = () => {
     setCategory("All");
-    setActiveTags([]);
     setQuery("");
   };
 
@@ -43,13 +38,13 @@ function InsightsPage() {
     const q = query.trim().toLowerCase();
     return insights.filter((post) => {
       if (category !== "All" && post.category !== category) return false;
-      if (activeTags.length && !activeTags.every((tag) => post.tags.includes(tag))) return false;
       if (!q) return true;
       return [post.title, post.excerpt, post.category, ...post.tags].join(" ").toLowerCase().includes(q);
     });
-  }, [category, activeTags, query]);
+  }, [category, query]);
 
-  const hasFilters = category !== "All" || activeTags.length > 0 || query.trim() !== "";
+  const hasFilters = category !== "All" || query.trim() !== "";
+
 
   return (
     <>
@@ -84,31 +79,8 @@ function InsightsPage() {
                   })}
                 </div>
               </div>
-
-              <div>
-                <p className="eyebrow text-primary">Filter by tag</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {insightTags.map((tag) => {
-                    const active = activeTags.includes(tag);
-                    return (
-                      <button
-                        key={tag}
-                        type="button"
-                        onClick={() => toggleTag(tag)}
-                        aria-pressed={active}
-                        className={`border px-3 py-1.5 text-xs font-medium uppercase tracking-wide transition-colors ${
-                          active
-                            ? "border-primary bg-primary text-primary-foreground"
-                            : "border-border text-muted-foreground hover:border-primary hover:text-foreground"
-                        }`}
-                      >
-                        {tag}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
             </div>
+
 
             <div className="lg:w-80">
               <label htmlFor="insights-search" className="eyebrow text-primary">
@@ -150,18 +122,6 @@ function InsightsPage() {
                     <p className="eyebrow text-primary">{post.category}</p>
                     <h2 className="mt-4 text-2xl font-bold leading-snug">{post.title}</h2>
                     <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
-                    <div className="mt-6 mt-auto flex flex-wrap gap-2 pt-4">
-                      {post.tags.map((tag) => (
-                        <button
-                          key={tag}
-                          type="button"
-                          onClick={() => toggleTag(tag)}
-                          className="border border-border px-2.5 py-1 text-[11px] uppercase tracking-wide text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
-                        >
-                          {tag}
-                        </button>
-                      ))}
-                    </div>
                   </article>
                 </Reveal>
               ))}
