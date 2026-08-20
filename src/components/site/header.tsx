@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Globe, Menu, Search } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,9 +18,10 @@ import {
 } from "@/components/ui/accordion";
 import { Logo } from "@/components/site/logo";
 import { ThemeToggle } from "@/components/site/theme-toggle";
+import { LanguageToggle } from "@/components/site/language-toggle";
 import { SiteSearch } from "@/components/site/site-search";
 import { cn } from "@/lib/utils";
-import { company, practiceAreas, solutionGroups } from "@/content/site";
+import { practiceAreas, solutionGroups } from "@/content/site";
 
 type NavLink = { label: string; to: string; description?: string };
 
@@ -167,10 +168,7 @@ export function Header() {
           >
             <Search className="h-4 w-4" />
           </Button>
-          <span className="hidden items-center gap-1.5 px-2 text-sm font-medium text-muted-foreground lg:inline-flex">
-            <Globe className="h-4 w-4" aria-hidden />
-            {company.region}
-          </span>
+          <LanguageToggle />
           <ThemeToggle />
 
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -227,10 +225,7 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
-                  <span className="mt-2 inline-flex items-center gap-2 text-sm text-muted-foreground">
-                    <Globe className="h-4 w-4" aria-hidden />
-                    {company.region}
-                  </span>
+                  <LanguageToggle className="inline-flex lg:hidden" />
                 </div>
               </div>
             </SheetContent>
