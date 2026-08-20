@@ -52,7 +52,7 @@ function SolutionGroupPage() {
           <ul className="mt-12 grid flush-grid sm:grid-cols-2 lg:grid-cols-2">
             {group.items.map((item) => (
               <li key={item.title} className="bg-background p-8 flex flex-col justify-center">
-                <h3 className="text-xl font-bold text-navy-foreground">{item.title}</h3>
+                <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
               </li>
             ))}

@@ -59,7 +59,7 @@ function EcosystemPage() {
           <div className="mt-10 space-y-12">
             {ecosystem.relationshipGroups.map((group) => (
               <div key={group.title}>
-                <h3 className="text-base font-semibold text-navy-foreground">
+                <h3 className="text-base font-semibold text-foreground">
                   {group.title}
                 </h3>
                 <ul className="mt-3 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
