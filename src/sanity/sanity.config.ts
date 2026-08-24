@@ -1,6 +1,8 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
+import { presentationTool } from '@sanity/presentation'
 import { schemaTypes } from './schemaTypes'
+import { StudioLogo } from './components/StudioLogo'
 
 export default defineConfig({
   name: 'default',
@@ -11,7 +13,18 @@ export default defineConfig({
 
   basePath: '/admin',
 
-  plugins: [structureTool()],
+  studio: {
+    components: {
+      logo: StudioLogo,
+    },
+  },
+
+  plugins: [
+    structureTool(),
+    presentationTool({
+      previewUrl: '/',
+    }),
+  ],
 
   schema: {
     types: schemaTypes,
