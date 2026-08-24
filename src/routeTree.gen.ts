@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
@@ -18,6 +19,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as AdminSplatRouteImport } from './routes/admin/$'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
 import { Route as SolutionsSlugRouteImport } from './routes/solutions.$slug'
 import { Route as WhatWeDoIndexRouteImport } from './routes/what-we-do.index'
@@ -31,6 +33,11 @@ import { Route as WhoWeAreWhyHarakaRouteImport } from './routes/who-we-are.why-h
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersRoute = CareersRouteImport.update({
@@ -72,6 +79,11 @@ const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSplatRoute = AdminSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => AdminRoute,
 } as any)
 const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
   id: '/solutions/',
@@ -121,6 +133,7 @@ const WhoWeAreWhyHarakaRoute = WhoWeAreWhyHarakaRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
@@ -129,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/products': typeof ProductsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/admin/$': typeof AdminSplatRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/what-we-do/$slug': typeof WhatWeDoSlugRoute
   '/who-we-are/approach': typeof WhoWeAreApproachRoute
@@ -141,6 +155,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
@@ -149,6 +164,7 @@ export interface FileRoutesByTo {
   '/products': typeof ProductsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/admin/$': typeof AdminSplatRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/what-we-do/$slug': typeof WhatWeDoSlugRoute
   '/who-we-are/approach': typeof WhoWeAreApproachRoute
@@ -162,6 +178,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
@@ -170,6 +187,7 @@ export interface FileRoutesById {
   '/products': typeof ProductsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/admin/$': typeof AdminSplatRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/what-we-do/$slug': typeof WhatWeDoSlugRoute
   '/who-we-are/approach': typeof WhoWeAreApproachRoute
@@ -184,6 +202,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/careers'
     | '/contact'
     | '/industries'
@@ -192,6 +211,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/sitemap.xml'
     | '/terms'
+    | '/admin/$'
     | '/solutions/$slug'
     | '/what-we-do/$slug'
     | '/who-we-are/approach'
@@ -204,6 +224,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/careers'
     | '/contact'
     | '/industries'
@@ -212,6 +233,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/sitemap.xml'
     | '/terms'
+    | '/admin/$'
     | '/solutions/$slug'
     | '/what-we-do/$slug'
     | '/who-we-are/approach'
@@ -224,6 +246,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/careers'
     | '/contact'
     | '/industries'
@@ -232,6 +255,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/sitemap.xml'
     | '/terms'
+    | '/admin/$'
     | '/solutions/$slug'
     | '/what-we-do/$slug'
     | '/who-we-are/approach'
@@ -245,6 +269,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRouteWithChildren
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
@@ -271,6 +296,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers': {
@@ -328,6 +360,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/admin/$': {
+      id: '/admin/$'
+      path: '/$'
+      fullPath: '/admin/$'
+      preLoaderRoute: typeof AdminSplatRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/solutions/': {
       id: '/solutions/'
@@ -395,8 +434,19 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AdminRouteChildren {
+  AdminSplatRoute: typeof AdminSplatRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminSplatRoute: AdminSplatRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRouteWithChildren,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,

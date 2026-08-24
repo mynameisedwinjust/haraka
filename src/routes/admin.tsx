@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Studio } from 'sanity'
 import config from '../sanity/sanity.config'
 
-export const Route = createFileRoute('/admin/$')({
+export const Route = createFileRoute('/admin')({
   component: AdminPage,
 })
 
