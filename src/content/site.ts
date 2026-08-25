@@ -270,7 +270,7 @@ import abijuruImage from "@/assets/abijuru_ariane.jpg";
 import gasaroImage from "@/assets/gasaro_joan.jpg";
 import mupenziImage from "@/assets/MUPENZI.jpg.jpeg";
 import bwimbaImage from "@/assets/bwimba_victor.jpg";
-import mwizaImage from "@/assets/MWIZA .jpg.jpeg";
+import gatsinziImage from "@/assets/gatsinzi_aisha.png";
 
 export const whyHaraka = [
   { title: "Business Understanding", description: "We start with the business problem, not the technology." },
@@ -286,7 +286,7 @@ export const leadership = [
   { name: "GASARO Joan", role: "Head of Operations & Finance", expertise: "Day-to-day operations, budgeting, contracts, compliance", image: gasaroImage },
   { name: "MUPENZI Yves", role: "Head of Growth (Sales, Marketing & Partnerships)", expertise: "Client acquisition, brand, and partnerships", image: mupenziImage },
   { name: "BWIMBA Victor", role: "Head of Digital Products", expertise: "Owns HARAKA ERP, CRM, POS and Marketplace as products, separate from client delivery", image: bwimbaImage },
-  { name: "MWIZA Rachel", role: "Head of People & Culture", expertise: "Hiring, onboarding, culture", image: mwizaImage },
+  { name: "GATSINZI Aisha", role: "Head of People & Culture", expertise: "Hiring, onboarding, culture", image: gatsinziImage },
 ];
 
 
