@@ -267,7 +267,7 @@ export const approach = [
 import nzizaImage from "@/assets/NZIZA.jpg.jpeg";
 import rurangirwaImage from "@/assets/RURANGIRWA .jpg.jpeg";
 import abijuruImage from "@/assets/ABIJURU.jpg.jpeg";
-import kimenyiImage from "@/assets/KIMENYI.jpg.jpeg";
+import gasaroImage from "@/assets/gasaro_joan.jpg";
 import mupenziImage from "@/assets/MUPENZI.jpg.jpeg";
 import bwimbaImage from "@/assets/BWIMBA.jpg.jpeg";
 import mwizaImage from "@/assets/MWIZA .jpg.jpeg";
@@ -283,7 +283,7 @@ export const leadership = [
   { name: "NZIZA Kevin", role: "Founder & CEO", expertise: "Vision, strategy, sales, client relationships, fundraising", image: nzizaImage },
   { name: "RURANGIRWA Freddy", role: "Co-Founder & CTO", expertise: "Technical architecture, engineering, product development, tech partnerships", image: rurangirwaImage },
   { name: "ABIJURU Ariane", role: "Head of Client Solutions", expertise: "Business consulting and project delivery, single point of contact for clients", image: abijuruImage },
-  { name: "KIMENYI Henriet", role: "Head of Operations & Finance", expertise: "Day-to-day operations, budgeting, contracts, compliance", image: kimenyiImage },
+  { name: "GASARO Joan", role: "Head of Operations & Finance", expertise: "Day-to-day operations, budgeting, contracts, compliance", image: gasaroImage },
   { name: "MUPENZI Yves", role: "Head of Growth (Sales, Marketing & Partnerships)", expertise: "Client acquisition, brand, and partnerships", image: mupenziImage },
   { name: "BWIMBA Victor", role: "Head of Digital Products", expertise: "Owns HARAKA ERP, CRM, POS and Marketplace as products, separate from client delivery", image: bwimbaImage },
   { name: "MWIZA Rachel", role: "Head of People & Culture", expertise: "Hiring, onboarding, culture", image: mwizaImage },
