@@ -264,7 +264,7 @@ export const approach = [
   { step: "05", title: "Grow", description: "Measure results and identify opportunities for continuous improvement." },
 ];
 
-import nzizaImage from "@/assets/NZIZA.jpg.jpeg";
+import nzizaImage from "@/assets/nziza_kevin.jpg";
 import rurangirwaImage from "@/assets/rurangirwa_freddy.png";
 import abijuruImage from "@/assets/abijuru_ariane.jpg";
 import gasaroImage from "@/assets/gasaro_joan.jpg";
