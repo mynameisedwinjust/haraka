@@ -110,6 +110,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
+    scripts: [
+      {
+        type: "text/javascript",
+        children: `function googleTranslateElementInit() { new window.google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr', autoDisplay: false}, 'google_translate_element'); }`
+      },
+      {
+        type: "text/javascript",
+        src: "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+      }
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -150,6 +160,7 @@ function RootComponent() {
         <WhatsAppButton />
         <CookieConsent />
         <Toaster />
+        <div id="google_translate_element" style={{ display: 'none' }}></div>
         <VisualEditing />
       </QueryClientProvider>
     </LanguageProvider>

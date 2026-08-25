@@ -25,6 +25,17 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const setLang = (l: Lang) => {
     setLangState(l);
     window.localStorage.setItem(STORAGE_KEY, l);
+    
+    // Trigger Google Translate
+    if (l === "fr") {
+      document.cookie = "googtrans=/en/fr; path=/; domain=" + window.location.hostname;
+      document.cookie = "googtrans=/en/fr; path=/";
+    } else {
+      document.cookie = "googtrans=/en/en; path=/; domain=" + window.location.hostname;
+      document.cookie = "googtrans=/en/en; path=/";
+    }
+    
+    window.location.reload();
   };
 
   return (
