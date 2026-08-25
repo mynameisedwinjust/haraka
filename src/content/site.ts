@@ -266,7 +266,7 @@ export const approach = [
 
 import nzizaImage from "@/assets/NZIZA.jpg.jpeg";
 import rurangirwaImage from "@/assets/RURANGIRWA .jpg.jpeg";
-import abijuruImage from "@/assets/ABIJURU.jpg.jpeg";
+import abijuruImage from "@/assets/abijuru_ariane.jpg";
 import gasaroImage from "@/assets/gasaro_joan.jpg";
 import mupenziImage from "@/assets/MUPENZI.jpg.jpeg";
 import bwimbaImage from "@/assets/BWIMBA.jpg.jpeg";
