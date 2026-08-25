@@ -131,7 +131,7 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-import { VisualEditing } from '@sanity/visual-editing';
+import { VisualEditing } from '@sanity/visual-editing/react';
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();

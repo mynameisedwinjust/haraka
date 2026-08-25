@@ -269,7 +269,7 @@ import rurangirwaImage from "@/assets/rurangirwa_freddy.png";
 import abijuruImage from "@/assets/abijuru_ariane.jpg";
 import gasaroImage from "@/assets/gasaro_joan.jpg";
 import mupenziImage from "@/assets/MUPENZI.jpg.jpeg";
-import bwimbaImage from "@/assets/BWIMBA.jpg.jpeg";
+import bwimbaImage from "@/assets/bwimba_victor.jpg";
 import mwizaImage from "@/assets/MWIZA .jpg.jpeg";
 
 export const whyHaraka = [
