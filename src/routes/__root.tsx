@@ -131,6 +131,8 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+import { VisualEditing } from '@sanity/visual-editing';
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -148,6 +150,7 @@ function RootComponent() {
         <WhatsAppButton />
         <CookieConsent />
         <Toaster />
+        <VisualEditing />
       </QueryClientProvider>
     </LanguageProvider>
   );

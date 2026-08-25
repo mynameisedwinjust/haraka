@@ -1,4 +1,5 @@
 import { ClientOnly, createFileRoute, Link } from "@tanstack/react-router";
+import { client } from "@/sanity/client";
 import { lazy, Suspense } from "react";
 
 import { Reveal } from "@/components/site/reveal";
@@ -21,6 +22,10 @@ import {
 } from "@/content/site";
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    const homepage = await client.fetch(`*[_type == "homepage"][0]`);
+    return { homepage };
+  },
   head: () => ({
     meta: [
       { title: "HARAKA — Business & Technology Transformation" },
@@ -91,6 +96,8 @@ function SectionTitle({
 }
 
 function Hero() {
+  const { homepage } = Route.useLoaderData();
+
   return (
     <section className="surface-ink relative overflow-hidden">
       <div className="absolute inset-0">
@@ -112,16 +119,14 @@ function Hero() {
         <Reveal variant={heroRevealVariant}>
           <p className="eyebrow text-primary">{company.descriptor}</p>
           <h1 className="mt-8 max-w-[18ch] text-4xl font-bold leading-[1.03] tracking-tight text-navy-foreground sm:text-6xl lg:text-[5.25rem]">
-            Transforming Business.
-            <br />
-            Enabling Growth.
+            {homepage?.headline || "Transforming Business. Enabling Growth."}
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-navy-foreground/75">
-            {company.promise}
+            {homepage?.description || company.promise}
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild size="lg">
-              <Link to="/what-we-do">What We Do</Link>
+              <Link to="/what-we-do">{homepage?.primaryButtonLabel || "What We Do"}</Link>
             </Button>
             <Button
               asChild
