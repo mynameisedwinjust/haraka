@@ -1,4 +1,4 @@
-﻿import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
 export type Lang = "en" | "fr";
 
@@ -36,4 +36,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLang() {
   return useContext(LanguageContext);
+}
+
+import { translations, type TranslationKey } from "./translations";
+
+export function useTranslations() {
+  const { lang } = useLang();
+  return function t(key: TranslationKey) {
+    return translations[lang]?.[key] || translations.en[key] || key;
+  };
 }

@@ -32,69 +32,72 @@ type NavGroup = {
   links: NavLink[];
 };
 
-export const megaMenu: NavGroup[] = [
-  {
-    label: "What We Do",
-    to: "/what-we-do",
-    blurb: "Four practice areas that move business performance.",
-    links: practiceAreas.map((area) => ({
-      label: area.title,
-      to: `/what-we-do/${area.slug}`,
-      description: area.summary,
-    })),
-  },
-  {
-    label: "Who We Are",
-    to: "/who-we-are",
-    blurb: "How HARAKA works and who does the work.",
-    links: [
-      { label: "About HARAKA", to: "/who-we-are" },
-      { label: "Our Approach", to: "/who-we-are/approach" },
-      { label: "Why HARAKA", to: "/who-we-are/why-haraka" },
-      { label: "Our People", to: "/who-we-are/our-people" },
-      { label: "Our Ecosystem", to: "/who-we-are/ecosystem" },
-    ],
-  },
-  {
-    label: "Solutions",
-    to: "/solutions",
-    blurb: "Solutions organized around business needs.",
-    links: [
-      ...solutionGroups.map((group) => ({
-        label: group.navLabel,
-        to: `/solutions/${group.slug}`,
-        description: group.summary,
-      })),
-      {
-        label: "HARAKA Products",
-        to: "/products",
-        description: "Technology designed around real business needs.",
-      },
-    ],
-  },
-];
-
-const simpleLinks: NavLink[] = [
-  { label: "What We Think", to: "/insights" },
-  { label: "Careers", to: "/careers" },
-  { label: "Contact", to: "/contact" },
-];
-
-// Desktop order per spec: What We Do, What We Think, Who We Are, Solutions, Careers, Contact
-const desktopOrder: (NavGroup | NavLink)[] = [
-  megaMenu[0]!,
-  simpleLinks[0]!,
-  megaMenu[1]!,
-  megaMenu[2]!,
-  simpleLinks[1]!,
-  simpleLinks[2]!,
-];
-
 function isGroup(item: NavGroup | NavLink): item is NavGroup {
   return "links" in item;
 }
 
+import { useTranslations } from "@/lib/language";
+
 export function Header() {
+  const t = useTranslations();
+
+  const megaMenu: NavGroup[] = [
+    {
+      label: t("nav.whatWeDo"),
+      to: "/what-we-do",
+      blurb: t("nav.megaWhatWeDo.blurb"),
+      links: practiceAreas.map((area) => ({
+        label: area.title,
+        to: `/what-we-do/${area.slug}`,
+        description: area.summary,
+      })),
+    },
+    {
+      label: t("nav.whoWeAre"),
+      to: "/who-we-are",
+      blurb: t("nav.megaWhoWeAre.blurb"),
+      links: [
+        { label: t("nav.aboutHaraka"), to: "/who-we-are" },
+        { label: t("nav.ourApproach"), to: "/who-we-are/approach" },
+        { label: t("nav.whyHaraka"), to: "/who-we-are/why-haraka" },
+        { label: t("nav.ourPeople"), to: "/who-we-are/our-people" },
+        { label: t("nav.ourEcosystem"), to: "/who-we-are/ecosystem" },
+      ],
+    },
+    {
+      label: t("nav.solutions"),
+      to: "/solutions",
+      blurb: t("nav.megaSolutions.blurb"),
+      links: [
+        ...solutionGroups.map((group) => ({
+          label: group.navLabel,
+          to: `/solutions/${group.slug}`,
+          description: group.summary,
+        })),
+        {
+          label: t("nav.harakaProducts"),
+          to: "/products",
+          description: "Technology designed around real business needs.",
+        },
+      ],
+    },
+  ];
+
+  const simpleLinks: NavLink[] = [
+    { label: t("nav.whatWeThink"), to: "/insights" },
+    { label: t("nav.careers"), to: "/careers" },
+    { label: t("nav.contact"), to: "/contact" },
+  ];
+
+  const desktopOrder: (NavGroup | NavLink)[] = [
+    megaMenu[0]!,
+    simpleLinks[0]!,
+    megaMenu[1]!,
+    megaMenu[2]!,
+    simpleLinks[1]!,
+    simpleLinks[2]!,
+  ];
+
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
